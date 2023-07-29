@@ -1,0 +1,15 @@
+{% include 'blog/index.html'%}
+{% load account %}
+{% load socialaccount %}
+{%block content%}
+<div class="w-80 border bg-blue-500">
+    <form action="{% url 'account_login' %}" method="POST" >
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="primaryAction" type="submit">Sign In</button>
+    </form>
+    <a class="w-full text-white" href="{% provider_login_url 'google' %}">Sign in with google <i class="fa-brands fa-google text-[#e0400b]"></i></a>
+    {{request.user}}
+</div>
+{%endblock%}
+<!-- <i class="fa-brands fa-google" style="color: #e0400b;"></i> -->

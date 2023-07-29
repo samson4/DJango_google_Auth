@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="backdrop-grayscale bg-white/90 w-[400px] h-[400px]">
+  <img src="https://briantarbox.com/img/slider/profile.png" alt="">
+</div>
+<div class="w-[400px] h-[400px]">
+  <img src="https://briantarbox.com/img/slider/profile.png" alt="">
+</div>
+    <div class="my-[6%] mx-[23px]  w-[250px]">
+        <h1 class="text-3xl font-bold ">
+            My Google Autentication Project
+          </h1>
+    </div>
+          {% if request.user.is_authenticated%}
+          <div class="flex border w-[100%]">
+            <div>
+              <p class="mt-3"> Welcome, {{request.user}} !</p>
+            </div>
+            <div class="mx-auto align-right">
+              <a href="accounts/logout/">Logout</a>
+            </div>
+          </div>
+          
+          {%else%}
+          <p class="mt-3"> Hello friend Please <a href="accounts/login/">log in</a></p>
+          
+          {%endif%}
+    
+    
+    <div>
+      <button></button>
+    </div>
+</body>
+</html>

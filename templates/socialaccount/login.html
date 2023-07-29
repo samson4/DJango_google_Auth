@@ -1,0 +1,13 @@
+{% include 'blog/index.html'%}
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+<h2>You are about to use google authentication</h2>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="rounded-lg bg-crimson-800">{% trans "Continue" %}</button>
+</form>
+{% endblock %}

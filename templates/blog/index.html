@@ -7,26 +7,30 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-
-    <div class="my-[6%] mx-[23px]  w-[250px]">
-        <h1 class="text-3xl font-bold ">
-            My Google Autentication Project
-          </h1>
-    </div>
           {% if request.user.is_authenticated%}
-          <div class="flex border w-[100%]">
-            <div>
-              <p class="mt-3"> Welcome, {{request.user}} !</p>
+          <div class="flex m-auto border w-[90%] justify-center  bg-blue-200 h-20 rounded rounded-lg">
+            
+            <div class="w-[90%] mt-6">
+              <h1 class="ml-3"> Welcome, {{request.user}}!</h1>
             </div>
-            <div class="mx-auto align-right">
-              <a href="accounts/logout/">Logout</a>
+            <div class="ml-auto mt-6">
+              <a href="{% url 'account_logout' %}" class="mr-3">Sign Out</a>
             </div>
           </div>
           
           {%else%}
-          <p class="mt-3"> Hello friend Please <a href="accounts/login/">log in</a></p>
+          <div class="flex m-auto border w-[90%] justify-center  bg-blue-200 h-20 rounded rounded-lg">
+            <p class="mt-6 ml-3 "> Hello friend.</p>
+            <a class="ml-auto mt-6 mr-3" href="{% url 'account_login' %}">Sign in</a>
+          </div>
           
           {%endif%}
+
+          <div class="m-auto w-[90%] justify-center">
+            <h1 class="text-3xl font-bold ">
+                Google Autentication
+              </h1>
+        </div>
     
     
     <div>

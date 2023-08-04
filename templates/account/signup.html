@@ -1,0 +1,32 @@
+{% include 'blog/index.html' %}
+
+
+{% load i18n %}
+
+
+
+{% block content %}
+<div class="m-auto w-[90%] ">
+<h1 class="font-bold">Sign Up</h1>
+
+<p>{% blocktrans %}Already have an account? Then please <a class="text-blue-600" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+
+<form class="signup p-auto" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <button type="submit" class=" bg-blue-700 text-white rounded-lg w-[100px] my-3">{% trans "Sign Up" %}</button>
+</form>
+</div>
+{% endblock %}
+
+<style>
+    input{
+        width: 100%;
+        height: 35px;
+        
+       
+    }
+</style>

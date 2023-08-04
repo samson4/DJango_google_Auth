@@ -2,14 +2,56 @@
 {% load account %}
 {% load socialaccount %}
 {%block content%}
-<div class="w-80 border bg-blue-500">
-    <form action="{% url 'account_login' %}" method="POST" >
+
+<div class="m-auto w-[90%] ">
+    <div class="w-full text-center mb-3">
+        <p>If you have not created an account yet, then please
+            <a class="text-blue-600" href="{{ signup_url }}">sign up</a> first.</p>
+    </div>
+    <div class="w-[50%] m-auto border-[3px] rounded-xl border-[#ecfccb]">
+   <h1 class="font-bold text-center bg-gray-100 h-[52px] "> <span class="text-center ">Sign In</span></h1>
+    <form action="{% url 'account_login' %}" method="POST" class="my-auto">
+        <div class="justify-center ">
         {% csrf_token %}
-        {{form.as_p}}
-        <button class="primaryAction" type="submit">Sign In</button>
+        <div class="w-full ">
+            <label for="login" class="">Username</label>
+            <span class="w-full">{{form.login}}</span>
+        </div>
+        <div>
+            <label for="password" class="">Password</label>
+            {{form.password}}
+        </div>
+        <div>
+            {{form.remember}}
+            <label for="remember" class="">Remember Me</label>
+        </div>
+       
+
+        </div>
+        <button class="primaryAction bg-blue-700 text-white rounded-lg w-[100%] my-3 p-2" type="submit">Sign In</button>
     </form>
-    <a class="w-full text-white" href="{% provider_login_url 'google' %}">Sign in with google <i class="fa-brands fa-google text-[#e0400b]"></i></a>
-    {{request.user}}
+    
+    <a href="{% provider_login_url 'google' %}"><button class=" bg-red-200 my-3 rounded-lg w-[100%] p-2" >Sign in with google <i class="fa-brands fa-google text-[#e0400b]"></i></button></a>
+</div>
 </div>
 {%endblock%}
 <!-- <i class="fa-brands fa-google" style="color: #e0400b;"></i> -->
+
+<style>
+    #id_login{
+        width: 100%;
+        height: 40px;
+        border-radius: 6px;
+        outline-color: cornflowerblue;
+        font-size: medium;
+        
+    }
+    #id_password{
+        width: 100%;
+        height: 40px;
+        border-radius: 6px;
+        outline-color: cornflowerblue;
+        font-size: medium;
+    }
+
+</style>

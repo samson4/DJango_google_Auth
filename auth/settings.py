@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = '/'
+# ACCOUNT_SIGNUP_FORM_CLASS = 'blog.forms.CustomSignupForm'
 # Application definition
 
 INSTALLED_APPS = [

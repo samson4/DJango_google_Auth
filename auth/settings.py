@@ -28,6 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = '/'
+# ACCOUNT_SIGNUP_REDIRECT_URL = '/accounts/login/'
+
 # ACCOUNT_SIGNUP_FORM_CLASS = 'blog.forms.CustomSignupForm'
 # Application definition
 
@@ -56,8 +58,8 @@ SOCIALACCOUNT_PROVIDERS = {
         # (``socialaccount`` app) containing the required client
         # credentials, or list them here:
         'APP': {
-            'client_id': '969259278472-dulb7s7t6qstkn642326oarpl0a48apa.apps.googleusercontent.com',
-            'secret': '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',
+            'client_id': '123456',
+            'secret': '123456',
             'key': ''
         }
     }
@@ -102,7 +104,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 WSGI_APPLICATION = 'auth.wsgi.application'
-
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
